@@ -19,10 +19,10 @@ namespace Sett.GUI.Controllers
         public HttpResponseMessage Get(string slug)
         {
 
-            Sett.DataTransferObjects.Article article;
+            Sett.DataTransferObjects.Article article = null;
             try
             {
-                article = new API.Controllers.ArticleController().Get().Where(a => a.Slug == slug).SingleOrDefault();
+                //article = new API.Controllers.ArticleController().Get().Where(a => a.Slug == slug).SingleOrDefault();
             }
             catch(InvalidOperationException e)
             {
