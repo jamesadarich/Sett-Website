@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><!-- Angulars Material CSS using RawGit to load directly from `bower-material/master` -->
+    <link rel="stylesheet" href="//rawgit.com/angular/bower-material/master/angular-material.css">
+
+    <!-- Angular Material Dependencies -->
+    <script src="//cdn.jsdelivr.net/hammerjs/2.0.4/hammer.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.js"></script>
+
+    <!-- Angular Material Javascript using RawGit to load directly from `bower-material/master` -->
+    <script src="//rawgit.com/angular/bower-material/master/angular-material.js"></script>
+    <script src="/js/admin/login.js"></script>
+    </head>
+    <body ng-app="login">
+        <div layout="column" layout-align="center center">
+            <h2>Log yo self in!</h2>
+            <div id="error-list" ng-controller="error-controller">
+                <div ng-repeat="error in errors" ng-include="'/templates/error-alert.html'"></div>
+            </div>
+            <form ng-controller="login-controller">
+                <md-text-float id="username" ng-model="user.Username" label="Username"></md-text-float>
+                <md-text-float id="password" ng-model="user.Password" label="Password" type="password"></md-text-float>
+                <md-button id="login" class="md-raised md-primary" ng-click="login()">Login</md-button>
+            </form>
+        </div>
+    </body>
+</html>

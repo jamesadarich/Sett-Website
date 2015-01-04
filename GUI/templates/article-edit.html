@@ -1,0 +1,7 @@
+﻿<div class="article" ng-model="article" data-article="{{article}}" style="background: url('/api{{article.Revisions[0].FeaturedImage.Url}}') no-repeat left center; background-size: cover">
+    <h1>{{article.Revisions[0].Title}}</h1>
+    <p>{{article.Revisions[0].Summary}}</p>
+    <p>{{article.Revisions[0].Author.FirstName}}</p>
+    <md-button class="md-raised md-accent" href="edit-article.html?id={{article.Id}}">Edit</md-button>
+    <md-button class="md-raised md-warn" ng-click="deleteArticle(article)">Delete</md-button>
+</div>
