@@ -31,7 +31,7 @@ app.controller('login-controller', function ($scope, $mdToast) {
     };
 
     $scope.login = function () {
-        var loginString = '/api/login?username=';
+        var loginString = apiUrl + '/login?username=';
         loginString = loginString + $scope.user.Username;
         loginString = loginString + '&password=' + $scope.user.Password;
 

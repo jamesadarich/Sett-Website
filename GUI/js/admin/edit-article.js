@@ -6,7 +6,7 @@ app.controller('article-revision-controller', function ($scope) {
 
     $.ajax({
         type: 'GET',
-        url: '/api/article?id=' + queryString.parameter('id')
+        url: apiUrl + '/article?id=' + queryString.parameter('id')
     })
     .success(function (article) {
         $scope.articleRevision = article.Revisions[article.Revisions.length - 1];
@@ -20,7 +20,7 @@ app.controller('article-revision-controller', function ($scope) {
                         headers: {
                             'Authorization': session.Id
                         },
-                        url: '/api/article-revision',
+                        url: apiUrl + '/article-revision',
                         data: JSON.stringify($scope.articleRevision),
                         contentType: 'application/json'
                     })

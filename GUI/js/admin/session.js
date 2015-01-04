@@ -8,5 +8,5 @@ var session = JSON.parse(localStorage.getItem('session'));
 
 function logOut() {
     localStorage.removeItem('session');
-    window.location.replace("/admin/login.html");
+    window.location.replace('/admin/login.html');
 }

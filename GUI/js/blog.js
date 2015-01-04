@@ -2,7 +2,7 @@
 app.controller('blog-controller', function ($scope) {
     $scope.articles = [];
 
-    $.get('/api/articles')
+    $.get(apiUrl + '/articles')
     .success(function (articles) {
         $scope.articles = articles;
         $scope.$apply();

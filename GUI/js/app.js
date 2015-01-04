@@ -1,4 +1,6 @@
-﻿if (app === undefined) {
+﻿var apiUrl = 'http://sett-api.azurewebsites.net'
+
+if (app === undefined) {
     var app = angular.module('sett-site', ['ngMaterial']);
 }
 app.controller('side-nav-controller', function ($scope, $mdSidenav) {
