@@ -136,10 +136,6 @@
     <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\API\API.csproj">
-      <Project>{e81fe39c-6339-478d-8fcc-6277027dced4}</Project>
-      <Name>API</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataTransferObjects\DataTransferObjects.csproj">
       <Project>{bbb770b7-7b38-48c7-8069-93b27da3ed4f}</Project>
       <Name>DataTransferObjects</Name>
