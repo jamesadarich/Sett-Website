@@ -1,4 +1,8 @@
-﻿$(document)
+﻿if (apiUrl === undefined) {
+    var apiUrl = 'http://api.getsett.net';
+}
+
+$(document)
 .ready(function () {
 
     $('.alert').hide();
