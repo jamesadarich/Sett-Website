@@ -99,6 +99,7 @@
     <Content Include="css\libraries\summernote.css" />
     <Content Include="Global.asax" />
     <Content Include="blog.html" />
+    <Content Include="imaginarium.html" />
     <Content Include="index.html" />
     <Content Include="js\admin\app.js" />
     <Content Include="js\admin\articles.js" />
