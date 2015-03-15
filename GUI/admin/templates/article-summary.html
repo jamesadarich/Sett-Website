@@ -1,0 +1,9 @@
+﻿<div layout="row" class="article" ng-model="article" data-article="{{article}}" style="background: url('/api{{article.FeaturedImageUrl}}') no-repeat left center; background-size: cover">
+    <div flex="30" flex-sm="50" class="image-overlay">
+        <h1>{{article.Title}}</h1>
+        <p>{{article.Summary}}</p>
+        <p>{{article.Author.FirstName}}</p>
+        <md-button class="md-raised md-accent" href="/article/{{article.Slug}}">Edit</md-button>
+        <md-button class="md-raised md-warn" href="/article/{{article.Slug}}">Delete</md-button>
+    </div>
+</div>

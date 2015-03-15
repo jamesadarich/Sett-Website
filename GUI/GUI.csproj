@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\articles.html" />
+    <Content Include="admin\controllers\articles.js" />
     <Content Include="admin\controllers\edit-article.js" />
     <Content Include="admin\controllers\login.js" />
     <Content Include="admin\controllers\side-nav.js" />
@@ -99,6 +100,7 @@
     <Content Include="admin\js\app.js" />
     <Content Include="admin\js\token.js" />
     <Content Include="admin\login.html" />
+    <Content Include="admin\templates\article-summary.html" />
     <Content Include="css\article.css" />
     <Content Include="css\global.css" />
     <Content Include="css\libraries\summernote.css" />

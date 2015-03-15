@@ -69,7 +69,7 @@
                         </md-input-container>
                         <md-input-container flex>
                             <label>Content</label>
-                            <text-angular ng-model="articleRevision.Content" text-angular-name="Content"></text-angular>
+                            <text-angular ng-model="selectedRevision.Content" text-angular-name="Content"></text-angular>
                         </md-input-container>
                         <md-button id="submit-revision" class="md-raised md-primary" ng-click="submitRevision()" ng-disabled="attemptingSubmit">Post</md-button>
                         <md-progress-linear md-mode="indeterminate" ng-show="attemptingSubmit"></md-progress-linear>
