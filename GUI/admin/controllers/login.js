@@ -1,8 +1,10 @@
 ﻿app.controller('login-controller', function ($scope, $http, $mdToast) {
     $scope.usename = null;
     $scope.password = null;
+    $scope.attemptingLogin = false;
 
     $scope.login = function () {
+        $scope.attemptingLogin = true;
         var data = "grant_type=password&username=" + $scope.username + "&password=" + $scope.password;
         $http.post('http://api.getsett.net/token',
                     data,
@@ -12,7 +14,7 @@
             window.location.replace('/admin/dashboard.html');
         })
         .error(function (data, status, headers, config) {
-
+            $scope.attemptingLogin = false;
             $mdToast.show(
                 $mdToast.simple()
                 .content(data.error_description)
