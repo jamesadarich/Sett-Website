@@ -17,15 +17,19 @@
     <script src="js/app.js"></script>
     <script src="controllers/login.js"></script>
     </head>
-    <body ng-app="get-sett-admin">
-        <div layout="column" layout-align="center center">
-            <h2>Log yo self in!</h2>
+<body ng-app="get-sett-admin" layout="column" layout-align="center center">
+    <div class="md-whiteframe-z1">
+        <md-toolbar>
+            <h1 class="md-toolbar-tools">Login</h1>
+        </md-toolbar>
+        <md-content class="md-padding">
             <form ng-controller="login-controller">
                 <md-text-float id="username" ng-model="username" label="Username"></md-text-float>
                 <md-text-float id="password" ng-model="password" label="Password" type="password"></md-text-float>
-                <md-button id="login" class="md-raised md-primary" ng-click="login()" ng-disabled="attemptingLogin">Login</md-button>
+                <md-button id="login" class="md-raised md-accent" ng-click="login()" ng-disabled="attemptingLogin">Login</md-button>
                 <md-progress-linear md-mode="indeterminate" ng-show="attemptingLogin"></md-progress-linear>
             </form>
-        </div>
-    </body>
+        </md-content>
+    </div>
+</body>
 </html>
