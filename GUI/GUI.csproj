@@ -108,12 +108,6 @@
     <Content Include="blog.html" />
     <Content Include="imaginarium.html" />
     <Content Include="index.html" />
-    <Content Include="js\admin\app.js" />
-    <Content Include="js\admin\articles.js" />
-    <Content Include="js\admin\edit-article.js" />
-    <Content Include="js\admin\login.js" />
-    <Content Include="js\admin\query-string.js" />
-    <Content Include="js\admin\session.js" />
     <Content Include="js\app.js" />
     <Content Include="js\blog.js" />
     <Content Include="js\libraries\summernote.min.js" />
@@ -142,12 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataTransferObjects\DataTransferObjects.csproj">
-      <Project>{bbb770b7-7b38-48c7-8069-93b27da3ed4f}</Project>
-      <Name>DataTransferObjects</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
