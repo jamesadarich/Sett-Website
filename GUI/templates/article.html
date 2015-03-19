@@ -41,15 +41,15 @@
                     <md-button hide-gt-md ng-click="openLeftMenu()">
                         <i class="fa fa-bars"></i>
                     </md-button>
-                    <span>@Model.Revisions.ToArray()[0].Title</span>
+                    <span>@Model.Title</span>
                 </h2>
             </md-toolbar>
             <div layout="column">
-                <div class="article-banner" style="background: url('/api@(Model.Revisions.ToArray()[0].FeaturedImage.Url)') no-repeat left center; background-size: cover">
-                    <h1 class="article-title">@Model.Revisions.ToArray()[0].Title</h1>
-                    <h3 class="article-author">@Model.Revisions.ToArray()[0].Author.FirstName</h3>
+                <div class="article-banner" style="background: url('/api@(Model.FeaturedImageUrl)') no-repeat left center; background-size: cover">
+                    <h1 class="article-title">@Model.Title</h1>
+                    <h3 class="article-author">@Model.Author.FirstName</h3>
                 </div>
-                <div class="article-body">@Raw(@Model.Revisions.ToArray()[0].Content)</div>
+                <div class="article-body">@Raw(@Model.Content)</div>
             </div>
         </md-content>
     </div>

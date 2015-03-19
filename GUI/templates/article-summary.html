@@ -1,8 +1,8 @@
-﻿<div layout="row" class="article" ng-model="article" data-article="{{article}}" style="background: url('/api{{article.Revisions[0].FeaturedImage.Url}}') no-repeat left center; background-size: cover">
+﻿<div layout="row" class="article" ng-model="article" data-article="{{article}}" style="background: url('/api{{article.FeaturedImageUrl}}') no-repeat left center; background-size: cover">
     <div flex="30" flex-sm="50" class="image-overlay">
-        <h1>{{article.Revisions[0].Title}}</h1>
-        <p>{{article.Revisions[0].Summary}}</p>
-        <p>{{article.Revisions[0].Author.FirstName}}</p>
+        <h1>{{article.Title}}</h1>
+        <p>{{article.Summary}}</p>
+        <p>{{article.Author.FirstName}}</p>
         <md-button class="md-raised md-accent" href="/article/{{article.Slug}}">Read more</md-button>
     </div>
 </div>

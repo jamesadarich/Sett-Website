@@ -18,16 +18,13 @@ namespace Sett.GUI.Controllers
         [Route("article/{slug}")]
         public HttpResponseMessage Get(string slug)
         {
+            var request = new HttpRequestMessage(HttpMethod.Get,
+                                            string.Format("http://api.imaginarium.getsett.net/articles?where=slug:is:{0}", slug));
 
-            Sett.DataTransferObjects.Article article = null;
-            try
-            {
-                //article = new API.Controllers.ArticleController().Get().Where(a => a.Slug == slug).SingleOrDefault();
-            }
-            catch(InvalidOperationException e)
-            {
-                return new HttpResponseMessage(HttpStatusCode.Conflict);
-            }
+            var client = new HttpClient();
+            var response = client.SendAsync(request).Result;
+
+            var article = response.Content.ReadAsAsync<Article>().Result;
 
             if (article == null)
             {
@@ -43,5 +40,35 @@ namespace Sett.GUI.Controllers
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/html");
             return response; 
         }
+    }
+
+    public class Article
+    {
+        public Guid Id;
+
+        public string Slug;
+
+        public string Title;
+
+        public string Content;
+
+        public string Summary;
+
+        public DateTime Timestamp;
+
+        public User Author;
+
+        public string FeaturedImageUrl;
+    }
+
+    public class User
+    {
+        public Guid Id;
+
+        public string FirstName;
+
+        public string LastName;
+
+        public string Username;
     }
 }
