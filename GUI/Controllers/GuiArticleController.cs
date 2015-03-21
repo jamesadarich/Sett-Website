@@ -35,10 +35,10 @@ namespace Sett.GUI.Controllers
             string template = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("~/templates/article.html"));
 
             //System.IO.File.ReadAllText(@"c:\whatever\somefile.htm")
-            var response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new StringContent(Razor.Parse(template, article));
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/html");
-            return response; 
+            var articleResponse = new HttpResponseMessage(HttpStatusCode.OK);
+            articleResponse.Content = new StringContent(Razor.Parse(template, article));
+            articleResponse.Content.Headers.ContentType = new MediaTypeHeaderValue("text/html");
+            return articleResponse; 
         }
     }
 
