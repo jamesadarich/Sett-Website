@@ -5,7 +5,6 @@
         $http.get(app.apiUrl + '/articles')
         .success(function (articles) {
             $scope.articles = articles;
-            $scope.$apply();
         });
         /*
         $scope.newArticle = function () {

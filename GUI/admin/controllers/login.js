@@ -1,12 +1,6 @@
-﻿if (app === undefined) {
-    var app = angular.module('get-sett-admin', ['ngMaterial']);
-}
+﻿var app = angular.module('get-sett-admin', ['ngMaterial']);
 
 app.apiUrl = 'http://api.getsett.net';
-
-function handleUnauthorized() {
-    document.location.href = '/admin/login.html';
-}
 
 app.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
