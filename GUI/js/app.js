@@ -2,7 +2,7 @@
 
     var app = angular.module('sett-site', ['ngMaterial', 'ngRoute']);
 
-    app.controller('side-nav-controller', function ($scope, $mdSidenav) {
+    app.controller('side-nav', function ($scope, $mdSidenav) {
         $scope.openLeftMenu = function () {
             $mdSidenav('left').toggle();
         };

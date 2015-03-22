@@ -10,12 +10,12 @@
     <script data-main="js/main" src="js/vendor/require.js"></script>
 </head>
 <body>
-    <div layout="row" ng-controller="side-nav-controller">
+    <div layout="row" ng-controller="side-nav">
         <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
             <md-toolbar class="md-toolbar-tools">
                 <a href="/"><h2>Sett</h2></a>
             </md-toolbar>
-            <md-content class="md-padding" ng-controller="side-nav-controller">
+            <md-content class="md-padding">
                 <a href="blog">Blog</a>
             </md-content>
         </md-sidenav>

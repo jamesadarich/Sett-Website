@@ -2,22 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
+    <base href="/admin">
     <meta name="viewport" content="initial-scale=1">
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.7.1/angular-material.css">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.css">
     <link href="/css/global.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-    <script data-main="js/main" src="js/vendor/require.js"></script>
+    <script data-main="/admin/js/main" src="/admin/js/vendor/require.js"></script>
 </head>
 <body>
-    <div layout="row" ng-controller="side-nav-controller">
+    <div layout="row" ng-controller="side-nav">
         <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
             <md-toolbar>
-                <a href="/admin/dashboard.html">
+                <a href="/admin">
                     <h1 class="md-toolbar-tools">Sett Admin</h1>
                 </a>
             </md-toolbar>
-            <md-content class="md-padding" ng-controller="side-nav-controller">
-                <a href="/admin/articles.html">
+            <md-content class="md-padding">
+                <a href="/admin/articles">
                     <h1 class="md-toolbar-tools">Articles</h1>
                 </a>
             </md-content>

@@ -1,0 +1,24 @@
+﻿<md-content class="md-padding">
+    <div class="container" layout="column" layout-align="center">
+        <div layout="column">
+            <md-input-container flex>
+                <label>Title</label>
+                <input ng-model="selectedRevision.Title" placeholder="Title" />
+            </md-input-container>
+            <md-input-container flex>
+                <label>Summary</label>
+                <input ng-model="selectedRevision.Summary" placeholder="Summary" />
+            </md-input-container>
+            <md-input-container flex>
+                <label>Image Url</label>
+                <input ng-model="selectedRevision.FeaturedImageUrl" placeholder="FeaturedImageUrl" />
+            </md-input-container>
+            <md-input-container flex>
+                <label>Content</label>
+                <text-angular ng-model="selectedRevision.Content" text-angular-name="Content"></text-angular>
+            </md-input-container>
+            <md-button id="submit-revision" class="md-raised md-primary" ng-click="submitRevision()" ng-disabled="attemptingSubmit">Post</md-button>
+            <md-progress-linear md-mode="indeterminate" ng-show="attemptingSubmit"></md-progress-linear>
+        </div>
+    </div>
+</md-content>
