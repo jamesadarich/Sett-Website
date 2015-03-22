@@ -112,6 +112,7 @@
     <Content Include="js\controllers\article.js" />
     <Content Include="js\controllers\home.js" />
     <Content Include="js\controllers\blog.js" />
+    <Content Include="js\theme.js" />
     <Content Include="js\vendor\require.js" />
     <Content Include="js\main.js" />
     <Content Include="templates\article-summary.html" />
