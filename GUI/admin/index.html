@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.7.1/angular-material.css">
+    <link href="/css/global.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <script data-main="js/main" src="js/vendor/require.js"></script>
+</head>
+<body>
+    <div layout="row" ng-controller="side-nav-controller">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
+            <md-toolbar>
+                <a href="/admin/dashboard.html">
+                    <h1 class="md-toolbar-tools">Sett Admin</h1>
+                </a>
+            </md-toolbar>
+            <md-content class="md-padding" ng-controller="side-nav-controller">
+                <a href="/admin/articles.html">
+                    <h1 class="md-toolbar-tools">Articles</h1>
+                </a>
+            </md-content>
+        </md-sidenav>
+        <md-content id="page-content">
+            <md-toolbar>
+                <h2 class="md-toolbar-tools">
+                    <md-button hide-gt-md ng-click="openLeftMenu()">
+                        <i class="fa fa-bars"></i>
+                    </md-button>
+                    <span>Dashboard</span>
+                </h2>
+            </md-toolbar>
+            <div ng-view></div>
+        </md-content>
+    </div>
+</body>
+</html>
