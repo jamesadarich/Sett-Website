@@ -97,32 +97,30 @@
     <Content Include="admin\controllers\side-nav.js" />
     <Content Include="admin\dashboard.html" />
     <Content Include="admin\edit-article.html" />
+    <Content Include="admin\index.html" />
     <Content Include="admin\js\app.js" />
+    <Content Include="admin\js\app2.js" />
+    <Content Include="admin\js\main.js" />
     <Content Include="admin\js\token.js" />
+    <Content Include="admin\js\vendor\require.js" />
     <Content Include="admin\login.html" />
     <Content Include="admin\templates\article-summary.html" />
     <Content Include="css\article.css" />
     <Content Include="css\global.css" />
-    <Content Include="css\libraries\summernote.css" />
-    <Content Include="Global.asax" />
-    <Content Include="blog.html" />
-    <Content Include="imaginarium.html" />
     <Content Include="index.html" />
     <Content Include="js\app.js" />
-    <Content Include="js\blog.js" />
-    <Content Include="js\libraries\summernote.min.js" />
-    <Content Include="templates\article-edit.html" />
+    <Content Include="js\controllers\article.js" />
+    <Content Include="js\controllers\home.js" />
+    <Content Include="js\controllers\blog.js" />
+    <Content Include="js\vendor\require.js" />
+    <Content Include="js\main.js" />
     <Content Include="templates\article-summary.html" />
-    <Content Include="templates\article.html" />
-    <Content Include="templates\error-alert.html" />
+    <Content Include="templates\controllers\article.html" />
+    <Content Include="templates\controllers\home.html" />
+    <Content Include="templates\controllers\blog.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\GuiArticleController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

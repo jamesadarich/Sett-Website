@@ -1,18 +1,45 @@
-﻿if (apiUrl === undefined) {
-    var apiUrl = 'http://api.getsett.net';
-}
+﻿define(['angularAMD', 'angularMaterial', 'angularRoute'], function (angularAMD) {
 
-if (app === undefined) {
-    var app = angular.module('sett-site', ['ngMaterial']);
-}
-app.controller('side-nav-controller', function ($scope, $mdSidenav) {
-    $scope.openLeftMenu = function () {
-        $mdSidenav('left').toggle();
-    };
-});
+    var app = angular.module('sett-site', ['ngMaterial', 'ngRoute']);
 
-app.config(function ($mdThemingProvider) {
-    $mdThemingProvider.theme('default')
-      .primaryColor('blue')
-      .accentColor('orange');
+    app.controller('side-nav-controller', function ($scope, $mdSidenav) {
+        $scope.openLeftMenu = function () {
+            $mdSidenav('left').toggle();
+        };
+    });
+
+    app.config(function ($routeProvider, $locationProvider) {
+
+        $routeProvider.when("/", angularAMD.route({
+            templateUrl: 'templates/controllers/home.html',
+            controller: 'home',
+            controllerUrl: 'controllers/home'
+        }))
+        .when("/blog", angularAMD.route({
+            templateUrl: 'templates/controllers/blog.html',
+            controller: 'blog',
+            controllerUrl: 'controllers/blog'
+        }))
+        .when("/article/:slug", angularAMD.route({
+            templateUrl: 'templates/controllers/article.html',
+            controller: 'article',
+            controllerUrl: 'controllers/article'
+        }));
+
+        $locationProvider.html5Mode(true);
+    });
+
+    /*
+    angular.module('sett-site', ['ngMaterial']).config(function ($mdThemingProvider, $routeProvider, $locationProvider) {
+        
+        $mdThemingProvider.theme('default')
+            .primaryPallete('blue')
+            .accentPallete('orange');
+    });
+    */
+
+    var bootstrappedApp = angularAMD.bootstrap(app);
+    bootstrappedApp.apiUrl = 'http://api.getsett.net';
+
+    return bootstrappedApp;
 });

@@ -1,17 +1,21 @@
-﻿if (apiUrl === undefined) {
-    var apiUrl = 'http://api.getsett.net';
-}
+﻿define(['angularAMD', 'angularRoute', 'angularMaterial'], function (angularAMD) {
 
-if (app === undefined) {
-    var app = angular.module('get-sett-admin', ['ngMaterial']);
-}
+    var app = angular.module('sett-site-admin', ['ngRoute', 'ngMaterial']);
+    
+    app.controller('side-nav-controller', function ($scope, $mdSidenav,) {
+        $scope.openLeftMenu = function () {
+            $mdSidenav('left').toggle();
+        };
+    });
+    
 
-function handleUnauthorized() {
-    document.location.href = '/admin/login.html';
-}
+    app.config(function ($mdThemingProvider, $routeProvider, $locationProvider) {
+        $mdThemingProvider.theme('default')
+            .primaryPallete('blue')
+            .accentPallete('orange');
+    });
 
-app.config(function ($mdThemingProvider) {
-    $mdThemingProvider.theme('default')
-      .primaryColor('indigo')
-      .accentColor('lime');
+    app.apiUrl = 'http://api.getsett.net';
+
+    return angularAMD.bootstrap(app);
 });
