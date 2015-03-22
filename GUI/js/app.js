@@ -8,7 +8,7 @@
         };
     });
 
-    app.config(function ($routeProvider, $locationProvider/*, $mdThemingProvider*/) {
+    app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
 
         $routeProvider.when("/", angularAMD.route({
             templateUrl: 'templates/controllers/home.html',
@@ -26,23 +26,13 @@
             controllerUrl: 'controllers/article'
         }));
 
-        /*
+
         $mdThemingProvider.theme('default')
-            .primaryPallete('blue')
-            .accentPallete('orange');
-            */
+            .primaryPalette('blue')
+            .accentPalette('orange');
 
         $locationProvider.html5Mode(true);
     });
-
-    /*
-    angular.module('sett-site', ['ngMaterial']).config(function ($mdThemingProvider, $routeProvider, $locationProvider) {
-        
-        $mdThemingProvider.theme('default')
-            .primaryPallete('blue')
-            .accentPallete('orange');
-    });
-    */
 
     var bootstrappedApp = angularAMD.bootstrap(app);
     bootstrappedApp.apiUrl = 'http://api.getsett.net';
