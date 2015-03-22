@@ -8,7 +8,7 @@
         };
     });
 
-    app.config(function ($routeProvider, $locationProvider) {
+    app.config(function ($routeProvider, $locationProvider/*, $mdThemingProvider*/) {
 
         $routeProvider.when("/", angularAMD.route({
             templateUrl: 'templates/controllers/home.html',
@@ -25,6 +25,12 @@
             controller: 'article',
             controllerUrl: 'controllers/article'
         }));
+
+        /*
+        $mdThemingProvider.theme('default')
+            .primaryPallete('blue')
+            .accentPallete('orange');
+            */
 
         //$locationProvider.html5Mode(true);
     });
