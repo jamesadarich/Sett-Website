@@ -1,4 +1,5 @@
-﻿define(['app'], function (app) {
-    app.controller('dashboard', function ($scope) {
+﻿define(['app', 'siteShell'], function (app) {
+    app.controller('dashboard', function ($scope, siteShell) {
+        siteShell.setTitle('Dashboard');
     });
 });

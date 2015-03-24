@@ -10,7 +10,9 @@ require.config({
         angularAMD: '//cdn.jsdelivr.net/angular.amd/0.2/angularAMD.min',
         angularRoute: '//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-route',
         textAngular: '//cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular.min',
-        angularSanitize: '//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min'
+        angularSanitize: '//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min',
+        siteShell: 'services/site-shell',
+        toolbar: 'controllers/toolbar'
     },
     shim: {
         'angularAMD': ['angular'],

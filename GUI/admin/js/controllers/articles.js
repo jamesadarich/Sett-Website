@@ -1,5 +1,8 @@
-﻿define(['app'], function (app) {
-    app.controller('articles', function ($scope, $http) {
+﻿define(['app', 'siteShell'], function (app) {
+    app.controller('articles', function ($scope, $http, siteShell) {
+
+        siteShell.setTitle('Articles');
+
         $scope.articles = [];
 
         $http.get(app.apiUrl + '/articles')

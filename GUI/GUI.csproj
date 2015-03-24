@@ -91,12 +91,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\controllers\login.js" />
+    <Content Include="admin\css\global.css" />
     <Content Include="admin\index.html" />
     <Content Include="admin\js\app.js" />
     <Content Include="admin\js\controllers\articles.js" />
     <Content Include="admin\js\controllers\dashboard.js" />
     <Content Include="admin\js\controllers\edit-article.js" />
+    <Content Include="admin\js\controllers\toolbar.js" />
     <Content Include="admin\js\main.js" />
+    <Content Include="admin\js\services\site-shell.js" />
     <Content Include="admin\js\vendor\require.js" />
     <Content Include="admin\login.html" />
     <Content Include="admin\templates\article-summary.html" />

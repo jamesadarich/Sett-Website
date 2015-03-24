@@ -5,13 +5,13 @@
     <base href="/admin">
     <meta name="viewport" content="initial-scale=1">
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.css">
-    <link href="/css/global.css" rel="stylesheet">
+    <link href="/admin/css/global.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <script data-main="/admin/js/main" src="/admin/js/vendor/require.js"></script>
 </head>
 <body>
     <div layout="row" ng-controller="side-nav">
-        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
             <md-toolbar>
                 <a href="/admin">
                     <h1 class="md-toolbar-tools">Sett Admin</h1>
@@ -24,12 +24,12 @@
             </md-content>
         </md-sidenav>
         <md-content id="page-content">
-            <md-toolbar>
+            <md-toolbar ng-controller="toolbar">
                 <h2 class="md-toolbar-tools">
                     <md-button hide-gt-md ng-click="openLeftMenu()">
                         <i class="fa fa-bars"></i>
                     </md-button>
-                    <span>Dashboard</span>
+                    <span>{{title}}</span>
                 </h2>
             </md-toolbar>
             <div ng-view></div>

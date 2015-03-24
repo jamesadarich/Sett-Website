@@ -1,4 +1,4 @@
-﻿define(['angularAMD', 'angularRoute', 'angularMaterial'], function (angularAMD) {
+﻿define(['angularAMD', 'angularRoute', 'angularMaterial', 'toolbar'], function (angularAMD) {
 
     var app = angular.module('sett-site-admin', ['ngRoute', 'ngMaterial']);
     
@@ -6,6 +6,32 @@
         $scope.openLeftMenu = function () {
             $mdSidenav('left').toggle();
         };
+    });
+
+    app.service('siteShell', function () {
+        var pageTitle = '';
+
+        var getTitle = function () {
+            return pageTitle;
+        }
+
+        var setTitle = function (title) {
+            pageTitle = title;
+        }
+
+        return {
+            getTitle: getTitle,
+            setTitle: setTitle
+        };
+
+    });
+
+    app.controller('toolbar', function ($scope, siteShell) {
+
+        $scope.title = siteShell.getTitle();
+        $scope.$watch(siteShell.getTitle, function () {
+            $scope.title = siteShell.getTitle();
+        })
     });
 
     app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {

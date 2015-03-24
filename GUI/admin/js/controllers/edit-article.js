@@ -1,6 +1,8 @@
-﻿define(['app', 'textAngular', 'angularMaterial'], function (app, textAngular) {
+﻿define(['app', 'textAngular', 'siteShell', 'angularMaterial'], function (app, textAngular) {
 
-    app.controller('edit-article', function ($scope, $http, $mdToast) {
+    app.controller('edit-article', function ($scope, $http, $mdToast, siteShell) {
+
+        siteShell.setTitle('Edit Article');
 
         $scope.selectedRevision = {};
         $scope.attemptingSubmit = false;
