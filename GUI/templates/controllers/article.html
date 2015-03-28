@@ -4,6 +4,6 @@
             <h1 class="article-title">{{article.Title}}</h1>
             <h3 class="article-author">{{article.Author.FirstName}}</h3>
         </div>
-        <div class="article-body">{{article.Content}}</div>
+        <div class="article-body" ng-bind-html="article.Content"></div>
     </div>
 </md-content>

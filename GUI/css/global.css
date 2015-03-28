@@ -1,5 +1,10 @@
-﻿#page {
-    min-height: 100%;
+﻿body {
+    overflow: hidden;
+    height: 100%;
+}
+
+#page {
+    height: 100%;
 }
 
 #page-content {
@@ -8,6 +13,7 @@
 
 #page-view {
     min-width: 100%;
+    overflow-y: auto;
 }
 
 #page-view > div {
