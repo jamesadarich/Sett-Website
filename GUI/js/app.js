@@ -2,10 +2,90 @@
 
     var app = angular.module('sett-site', ['ngMaterial', 'ngRoute']);
 
-    app.controller('side-nav', function ($scope, $mdSidenav) {
+    app.service('siteShell', function () {
+        var pageTitle = '';
+
+        var getTitle = function () {
+            return pageTitle;
+        }
+
+        var setTitle = function (title) {
+            pageTitle = title;
+        }
+
+        return {
+            getTitle: getTitle,
+            setTitle: setTitle
+        };
+
+    });
+    app.service('searchEngineOptimiser', function () {
+        var metaTitle = '';
+        var metaDescription = '';
+        var metaKeyWords = [];
+
+        var getTitle = function () {
+            return metaTitle;
+        }
+
+        var setTitle = function (title) {
+            metaTitle = title;
+        }
+
+        var getDescription = function () {
+            return metaDescription;
+        }
+
+        var setDescription = function (description) {
+            metaDescription = description;
+        }
+
+        var getKeyWords = function () {
+            return metaKeyWords.join(', ');
+        }
+
+        var setKeyWords = function (keyWords) {
+            metaKeyWords = keyWords;
+        }
+
+        return {
+            getTitle: getTitle,
+            setTitle: setTitle,
+            getDescription: getDescription,
+            setDescription: setDescription,
+            getKeyWords: getKeyWords,
+            setKeyWords: setKeyWords
+        };
+
+    });
+
+    app.controller('body', function ($scope, $mdSidenav, siteShell) {
+
+        $scope.title = siteShell.getTitle();
+        $scope.$watch(siteShell.getTitle, function () {
+            $scope.title = siteShell.getTitle();
+        });
+
         $scope.openLeftMenu = function () {
             $mdSidenav('left').toggle();
         };
+    });
+
+    app.controller('head', function ($scope, $mdSidenav, searchEngineOptimiser) {
+        $scope.title = searchEngineOptimiser.getTitle();
+        $scope.$watch(searchEngineOptimiser.getTitle, function () {
+            $scope.title = searchEngineOptimiser.getTitle();
+        });
+
+        $scope.description = searchEngineOptimiser.getDescription();
+        $scope.$watch(searchEngineOptimiser.getDescription, function () {
+            $scope.description = searchEngineOptimiser.getDescription();
+        });
+
+        $scope.keyWords = searchEngineOptimiser.getKeyWords();
+        $scope.$watch(searchEngineOptimiser.getKeyWords, function () {
+            $scope.keyWords = searchEngineOptimiser.getKeyWords();
+        });
     });
 
     app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {

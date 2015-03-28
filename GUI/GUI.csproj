@@ -108,6 +108,7 @@
     <Content Include="admin\templates\controllers\edit-article.html" />
     <Content Include="css\article.css" />
     <Content Include="css\global.css" />
+    <Content Include="site-map.xml" />
     <Content Include="index.html" />
     <Content Include="js\app.js" />
     <Content Include="js\controllers\article.js" />
@@ -120,7 +121,9 @@
     <Content Include="templates\controllers\article.html" />
     <Content Include="templates\controllers\home.html" />
     <Content Include="templates\controllers\blog.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

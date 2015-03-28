@@ -1,17 +1,19 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-    <base href="/">
+<head ng-controller="head">
+    <title>{{title}}</title>
     <meta name="viewport" content="initial-scale=1">
+    <meta name="description" content="{{description}}">
+    <meta name="keywords" content="{{keyWords}}">
+    <base href="/">
     <link href="/css/global.css" rel="stylesheet">
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <script data-main="js/main" src="js/vendor/require.js"></script>
 </head>
-<body>
-    <div layout="row" ng-controller="side-nav">
-        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
+<body ng-controller="body">
+    <div layout="row">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
             <md-toolbar class="md-toolbar-tools">
                 <a href="/"><h2>Sett</h2></a>
             </md-toolbar>
@@ -25,7 +27,7 @@
                     <md-button hide-gt-md ng-click="openLeftMenu()">
                         <i class="fa fa-bars fa-2x"></i>
                     </md-button>
-                    <span>Get Sett!!!</span>
+                    <span>{{title}}</span>
                 </h2>
             </md-toolbar>
             <div ng-view></div>
