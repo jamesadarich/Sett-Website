@@ -12,7 +12,7 @@
     <script data-main="js/main" src="js/vendor/require.js"></script>
 </head>
 <body ng-controller="body">
-    <div layout="row">
+    <div id="page" layout="row">
         <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
             <md-toolbar class="md-toolbar-tools">
                 <a href="/"><h2>Sett</h2></a>
@@ -30,7 +30,7 @@
                     <span>{{title}}</span>
                 </h2>
             </md-toolbar>
-            <div ng-view></div>
+            <div id="page-view" class="at-view-slide-in-right at-view-slide-out-right" ng-view></div>
         </md-content>
     </div>
 </body>
