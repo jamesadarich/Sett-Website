@@ -1,4 +1,7 @@
 ﻿<md-content class="md-padding">
+    <div class="loading" ng-hide="!loading">
+        <h1><i class="fa fa-refresh pulse-rotate"></i>Loading</h1>
+    </div>
     <div layout="column">
         <div class="article-banner" style="background: url('{{article.FeaturedImageUrl}}') no-repeat left center; background-size: cover">
             <h1 class="article-title">{{article.Title}}</h1>

@@ -110,6 +110,7 @@
     <Content Include="admin\templates\controllers\file-not-found.html" />
     <Content Include="css\article.css" />
     <Content Include="css\global.css" />
+    <Content Include="css\loading.css" />
     <Content Include="js\controllers\file-not-found.js" />
     <Content Include="site-map.xml" />
     <Content Include="index.html" />

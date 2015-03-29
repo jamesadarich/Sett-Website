@@ -1,4 +1,4 @@
-﻿define(['angularAMD', 'angularMaterial', 'angularRoute', 'textAngular'], function (angularAMD) {
+﻿define(['angularAMD', 'angularMaterial', 'angularRoute'], function (angularAMD) {
 
     var app = angular.module('sett-site', ['ngMaterial', 'ngRoute']);
 
@@ -69,6 +69,8 @@
         $scope.openLeftMenu = function () {
             $mdSidenav('left').toggle();
         };
+
+        $scope.isLoaded = true;
     });
 
     app.controller('head', function ($scope, $mdSidenav, searchEngineOptimiser) {

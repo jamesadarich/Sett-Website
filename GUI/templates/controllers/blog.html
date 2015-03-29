@@ -1,3 +1,6 @@
 ﻿<div id="article-list">
+    <div class="loading" ng-hide="!loading">
+        <h1><i class="fa fa-refresh pulse-rotate"></i>Loading</h1>
+    </div>
     <div ng-repeat="article in articles" ng-include="'/templates/article-summary.html'"></div>
 </div>

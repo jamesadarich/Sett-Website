@@ -1,5 +1,6 @@
 ﻿define(['app'], function (app) {
     app.controller('article', function ($scope, $http, $routeParams, $sce, siteShell, searchEngineOptimiser) {
+        $scope.loading = true;
         $scope.article = {};
 
         $http.get(app.apiUrl + '/articles?where=slug:is:' + $routeParams.slug)
@@ -20,6 +21,8 @@
             else {
                 searchEngineOptimiser.setKeyWords([]);
             }
+
+            $scope.loading = false;
         });
     });
 });
