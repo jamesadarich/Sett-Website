@@ -1,17 +1,16 @@
 ﻿define(['app', 'siteShell', 'angularMaterial'], function (app, textAngular) {
 
-    app.controller('edit-article', function ($scope, $http, $mdToast, $sce, siteShell) {
+    app.controller('edit-article', function ($scope, $http, $mdToast, $routeParams, siteShell) {
 
         siteShell.setTitle('Edit Article');
 
         $scope.selectedRevision = {};
-        $scope.attemptingSubmit = false;
-        $scope.selectedRevision.Content = '';
-        $scope.preview = $sce.trustAsHtml('<p>test<p>');
-
-        $scope.$watch('selectedRevision.Content', function () {
-            $scope.preview = $sce.trustAsHtml($scope.selectedRevision.Content);
+        $http.get(app.apiUrl + '/articles?where=slug:is:' + $routeParams.slug)
+        .success(function (articles) {
+            $scope.selectedRevision = articles[0];
         });
+
+        $scope.attemptingSubmit = false;
 
         $scope.submitRevision = function () {
             $scope.attemptingSubmit = true;

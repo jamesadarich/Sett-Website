@@ -1,6 +1,6 @@
-﻿define(['angularAMD', 'angularRoute', 'angularMaterial', 'toolbar'], function (angularAMD) {
+﻿define(['angularAMD', 'angularRoute', 'angularMaterial', 'textAngular', 'toolbar'], function (angularAMD) {
 
-    var app = angular.module('sett-site-admin', ['ngRoute', 'ngMaterial']);
+    var app = angular.module('sett-site-admin', ['ngRoute', 'ngMaterial', 'textAngular']);
     
     app.controller('side-nav', function ($scope, $mdSidenav) {
         $scope.openLeftMenu = function () {
@@ -50,7 +50,7 @@
             controller: 'articles',
             controllerUrl: 'controllers/articles'
         }))
-        .when('/admin/articles/edit/:id', angularAMD.route({
+        .when('/admin/articles/edit/:slug', angularAMD.route({
             templateUrl: 'admin/templates/controllers/edit-article.html',
             controller: 'edit-article',
             controllerUrl: 'controllers/edit-article'
