@@ -54,9 +54,53 @@
             templateUrl: 'admin/templates/controllers/edit-article.html',
             controller: 'edit-article',
             controllerUrl: 'controllers/edit-article'
+        }))
+        .otherwise(angularAMD.route({
+            templateUrl: 'admin/templates/controllers/file-not-found.html',
+            controller: 'file-not-found',
+            controllerUrl: 'controllers/file-not-found'
         }));
 
         $locationProvider.html5Mode(true);
+    });
+    app.service('searchEngineOptimiser', function () {
+        var metaTitle = '';
+        var metaDescription = '';
+        var metaKeyWords = [];
+
+        var getTitle = function () {
+            return metaTitle;
+        }
+
+        var setTitle = function (title) {
+            metaTitle = title;
+        }
+
+        var getDescription = function () {
+            return metaDescription;
+        }
+
+        var setDescription = function (description) {
+            metaDescription = description;
+        }
+
+        var getKeyWords = function () {
+            return metaKeyWords.join(', ');
+        }
+
+        var setKeyWords = function (keyWords) {
+            metaKeyWords = keyWords;
+        }
+
+        return {
+            getTitle: getTitle,
+            setTitle: setTitle,
+            getDescription: getDescription,
+            setDescription: setDescription,
+            getKeyWords: getKeyWords,
+            setKeyWords: setKeyWords
+        };
+
     });
 
     app.apiUrl = 'http://api.getsett.net';

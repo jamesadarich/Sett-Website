@@ -104,6 +104,11 @@
             templateUrl: 'templates/controllers/article.html',
             controller: 'article',
             controllerUrl: 'controllers/article'
+        }))
+        .otherwise(angularAMD.route({
+            templateUrl: 'templates/controllers/file-not-found.html',
+            controller: 'file-not-found',
+            controllerUrl: 'controllers/file-not-found'
         }));
 
 

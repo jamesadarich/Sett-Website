@@ -1,5 +1,5 @@
 ﻿<md-content class="md-padding">
-    <div class="container" layout="column" layout-align="center">
+    <div layout="column" layout-align="center">
         <div layout="column">
             <md-input-container flex>
                 <label>Title</label>
@@ -13,10 +13,16 @@
                 <label>Image Url</label>
                 <input ng-model="selectedRevision.FeaturedImageUrl" placeholder="FeaturedImageUrl" />
             </md-input-container>
-            <md-input-container flex>
-                <label>Content</label>
-                <text-angular ng-model="selectedRevision.Content" text-angular-name="Content"></text-angular>
-            </md-input-container>
+            <div layout="row">
+                <md-input-container flex>
+                    <label>Content</label>
+                    <textarea ng-model="selectedRevision.Content" placeholder="HTML" ></textarea>
+                </md-input-container>
+                <div flex>
+                    <label>Preview</label>
+                    <div ng-bind-html="preview"></div>
+                </div>
+            </div>
             <md-button id="submit-revision" class="md-raised md-primary" ng-click="submitRevision()" ng-disabled="attemptingSubmit">Post</md-button>
             <md-progress-linear md-mode="indeterminate" ng-show="attemptingSubmit"></md-progress-linear>
         </div>

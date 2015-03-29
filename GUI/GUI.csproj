@@ -97,6 +97,7 @@
     <Content Include="admin\js\controllers\articles.js" />
     <Content Include="admin\js\controllers\dashboard.js" />
     <Content Include="admin\js\controllers\edit-article.js" />
+    <Content Include="admin\js\controllers\file-not-found.js" />
     <Content Include="admin\js\controllers\toolbar.js" />
     <Content Include="admin\js\main.js" />
     <Content Include="admin\js\services\site-shell.js" />
@@ -106,8 +107,10 @@
     <Content Include="admin\templates\controllers\articles.html" />
     <Content Include="admin\templates\controllers\dashboard.html" />
     <Content Include="admin\templates\controllers\edit-article.html" />
+    <Content Include="admin\templates\controllers\file-not-found.html" />
     <Content Include="css\article.css" />
     <Content Include="css\global.css" />
+    <Content Include="js\controllers\file-not-found.js" />
     <Content Include="site-map.xml" />
     <Content Include="index.html" />
     <Content Include="js\app.js" />
@@ -119,6 +122,7 @@
     <Content Include="js\main.js" />
     <Content Include="templates\article-summary.html" />
     <Content Include="templates\controllers\article.html" />
+    <Content Include="templates\controllers\file-not-found.html" />
     <Content Include="templates\controllers\home.html" />
     <Content Include="templates\controllers\blog.html" />
     <Content Include="Web.config">
