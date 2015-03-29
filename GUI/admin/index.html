@@ -18,14 +18,13 @@
             <h1><i class="fa fa-refresh pulse-rotate"></i>Loading</h1>
         </div>
     </div>
-    <div id="page" layout="row" ng-controller="side-nav">
+    <div id="page" layout="row">
         <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
             <md-toolbar>
-                <a href="/admin">
-                    <h1 class="md-toolbar-tools">Sett Admin</h1>
-                </a>
+                <h1 ng-href="/admin">Dashboard</h1>
             </md-toolbar>
             <md-content class="md-padding">
+                <h1 class="md-toolbar-tools">Hey, {{user.FirstName}}!<small ng-click="logout()">logout</small></h1>
                 <a href="/admin/articles">
                     <h1 class="md-toolbar-tools">Articles</h1>
                 </a>

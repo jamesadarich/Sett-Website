@@ -14,6 +14,8 @@
 
         $scope.submitRevision = function () {
             $scope.attemptingSubmit = true;
+            $scope.selectedRevision.ArticleId = $scope.selectedRevision.Id;
+            $scope.selectedRevision.Id = null;
             $http.post(app.apiUrl + '/article/revision',
                         $scope.selectedRevision,
                         { headers: { 'Authorization': app.token.token_type + ' ' + app.token.access_token } }).

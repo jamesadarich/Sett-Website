@@ -1,12 +1,6 @@
 ﻿define(['angularAMD', 'angularRoute', 'angularMaterial', 'textAngular', 'toolbar'], function (angularAMD) {
 
     var app = angular.module('sett-site-admin', ['ngRoute', 'ngMaterial', 'textAngular']);
-    
-    app.controller('side-nav', function ($scope, $mdSidenav) {
-        $scope.openLeftMenu = function () {
-            $mdSidenav('left').toggle();
-        };
-    });
 
     app.service('siteShell', function () {
         var pageTitle = '';
@@ -34,7 +28,40 @@
         })
     });
 
-    app.controller('body', function ($scope, siteShell) {
+    app.controller('body', function ($scope, $http, $mdSidenav, siteShell) {
+
+        $scope.openLeftMenu = function () {
+            $mdSidenav('left').toggle();
+        };
+
+        $scope.logout = function () {
+            localStorage.removeItem('token');
+            document.location.href = '/admin/login.html';
+        };
+
+        $scope.user = {};
+
+        $http.get(app.apiUrl + '/users/current',
+                    { headers: { 'Authorization': app.token.token_type + ' ' + app.token.access_token } }).
+        success(function (data, status, headers, config) {
+            // this callback will be called asynchronously
+            // when the response is available
+            $scope.user = data;
+        })
+        .error(function (data, status, headers, config) {
+
+            $scope.attemptingSubmit = false;
+            if (status === 401) {
+                app.handleUnauthorized();
+            }
+
+            $mdToast.show(
+                $mdToast.simple()
+                .content(JSON.stringify(data))
+                .position('top left right')
+                .hideDelay(3000)
+            );
+        });
 
         $scope.pageLoaded = true;
     });
