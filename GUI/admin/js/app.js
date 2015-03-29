@@ -30,13 +30,17 @@
 
     app.controller('body', function ($scope, $http, $mdSidenav, siteShell) {
 
+        if (!app.token) {
+            app.handleUnauthorized();
+        }
+
         $scope.openLeftMenu = function () {
             $mdSidenav('left').toggle();
         };
 
         $scope.logout = function () {
             localStorage.removeItem('token');
-            document.location.href = '/admin/login.html';
+            document.location.href = '/login/';
         };
 
         $scope.user = {};
@@ -82,7 +86,7 @@
             controller: 'articles',
             controllerUrl: 'controllers/articles'
         }))
-        .when('/admin/articles/edit/:slug', angularAMD.route({
+        .when('/admin/articles/edit/:id', angularAMD.route({
             templateUrl: 'admin/templates/controllers/edit-article.html',
             controller: 'edit-article',
             controllerUrl: 'controllers/edit-article'
@@ -138,7 +142,7 @@
     app.apiUrl = 'http://api.getsett.net';
 
     app.handleUnauthorized = function() {
-        document.location.href = '/admin/login.html';
+        document.location.href = '/login/';
     };
 
     app.token = JSON.parse(localStorage.getItem('token'));

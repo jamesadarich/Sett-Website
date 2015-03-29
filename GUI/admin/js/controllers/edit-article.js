@@ -3,18 +3,20 @@
     app.controller('edit-article', function ($scope, $http, $mdToast, $routeParams, siteShell) {
 
         siteShell.setTitle('Edit Article');
+        $scope.articleId = $routeParams.id;
 
         $scope.selectedRevision = {};
-        $http.get(app.apiUrl + '/articles?where=slug:is:' + $routeParams.slug)
-        .success(function (articles) {
-            $scope.selectedRevision = articles[0];
+        $http.get(app.apiUrl + '/article/' + $routeParams.id + '/revisions')
+        .success(function (revisions) {
+            $scope.revisions = revisions;
+            $scope.selectedRevision = revisions[0];
         });
 
         $scope.attemptingSubmit = false;
 
         $scope.submitRevision = function () {
             $scope.attemptingSubmit = true;
-            $scope.selectedRevision.ArticleId = $scope.selectedRevision.Id;
+            $scope.selectedRevision.ArticleId = $scope.articleId;
             $scope.selectedRevision.Id = null;
             $http.post(app.apiUrl + '/article/revision',
                         $scope.selectedRevision,

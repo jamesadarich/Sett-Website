@@ -90,7 +90,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admin\controllers\login.js" />
+    <Content Include="login\js\app.js" />
+    <Content Include="login\js\controllers\login.js" />
     <Content Include="admin\css\global.css" />
     <Content Include="admin\index.html" />
     <Content Include="admin\js\app.js" />
@@ -101,8 +102,6 @@
     <Content Include="admin\js\controllers\toolbar.js" />
     <Content Include="admin\js\main.js" />
     <Content Include="admin\js\services\site-shell.js" />
-    <Content Include="admin\js\vendor\require.js" />
-    <Content Include="admin\login.html" />
     <Content Include="admin\templates\article-summary.html" />
     <Content Include="admin\templates\controllers\articles.html" />
     <Content Include="admin\templates\controllers\dashboard.html" />
@@ -112,6 +111,10 @@
     <Content Include="css\global.css" />
     <Content Include="css\loading.css" />
     <Content Include="js\controllers\file-not-found.js" />
+    <Content Include="login\index.html" />
+    <Content Include="login\js\main.js" />
+    <Content Include="login\templates\controllers\file-not-found.html" />
+    <Content Include="login\templates\controllers\login.html" />
     <Content Include="site-map.xml" />
     <Content Include="index.html" />
     <Content Include="js\app.js" />

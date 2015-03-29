@@ -1,5 +1,8 @@
 ﻿<md-content class="md-padding">
     <div layout="column" layout-align="center">
+        <md-select placeholder="Select Revision" ng-model="selectedRevision">
+            <md-option ng-repeat="revision in revisions" ng-value="revision">{{revision.Timestamp}}</md-option>
+        </md-select>
         <div layout="column">
             <md-input-container flex>
                 <label>Title</label>
