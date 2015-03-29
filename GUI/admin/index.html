@@ -12,7 +12,12 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/angular.textangular/1.3.7/textAngular.css" />
     <script data-main="/admin/js/main" src="/admin/js/vendor/require.js"></script>
 </head>
-<body>
+<body ng-controller="body">
+    <div class="overlay" ng-hide="pageLoaded">
+        <div class="loading">
+            <h1><i class="fa fa-refresh pulse-rotate"></i>Loading</h1>
+        </div>
+    </div>
     <div id="page" layout="row" ng-controller="side-nav">
         <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
             <md-toolbar>

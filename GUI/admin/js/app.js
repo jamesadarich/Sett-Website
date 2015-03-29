@@ -34,6 +34,11 @@
         })
     });
 
+    app.controller('body', function ($scope, siteShell) {
+
+        $scope.pageLoaded = true;
+    });
+
     app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
 
         $mdThemingProvider.theme('default')

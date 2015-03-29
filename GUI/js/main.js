@@ -9,6 +9,7 @@ require.config({
         angularAMD: '//cdn.jsdelivr.net/angular.amd/0.2/angularAMD.min',
         angularRoute: '//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-route'
     },
+    waitSeconds: 30,
     shim: {
         'angularAMD': ['angular'],
         'angularRoute': ['angular'],
