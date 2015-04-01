@@ -95,10 +95,14 @@ call :SelectNodeVersion
 :: 3. Install npm packages
 IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
-  call :ExecuteCmd !NPM_CMD! install --production
+  call :ExecuteCmd !NPM_CMD! install
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
+
+:: 5. Install Bower
+$NPM_CMD install bower
+./node_modules/.bin/bower install
 
 :: 4. Run Grunt
 :: 4.1 Install Grunt locally
