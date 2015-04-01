@@ -88,6 +88,10 @@ goto :EOF
 :Deployment
 echo Handling node.js deployment.
 
+echo Kudu Sync from "%DEPLOYMENT_SOURCE%" to "%DEPLOYMENT_TARGET%"
+call %KUDU_SYNC_COMMAND% -q -f "%DEPLOYMENT_SOURCE%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.deployment;deploy.cmd" 2>nul
+IF !ERRORLEVEL! NEQ 0 goto error
+
 call :SelectNodeVersion
 call :ExecuteCmd !NPM_CMD! install
 
@@ -100,8 +104,8 @@ $NPM_CMD install grunt-cli
 ./node_modules/.bin/grunt --no-color deploy
 
 ::IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
-  call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
-    IF !ERRORLEVEL! NEQ 0 goto error
+::  call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
+::    IF !ERRORLEVEL! NEQ 0 goto error
 ::)
 
 :: 2. Select node version
