@@ -88,6 +88,8 @@ goto :EOF
 :Deployment
 echo Handling node.js deployment.
 
+call :SelectNodeVersion
+
 $NPM_CMD install
 
 $NPM_CMD install bower
