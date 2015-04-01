@@ -111,6 +111,7 @@ call !NPM_CMD! install grunt-cli
 
 :: 4.2 Get Grunt to compile Sass
 call "!NODE_EXE!" ./node_modules/grunt-cli/bin/grunt sass
+echo Sass Compiled
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
