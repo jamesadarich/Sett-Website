@@ -105,7 +105,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 call !NPM_CMD! install grunt-cli
 
 :: 4.2 Get Grunt to compile Sass
-call "!NODE_EXE!" ./node_modules/grunt-cli/bin/grunt sass
+call "!NODE_EXE!" ./node_modules/grunt-cli/bin/grunt --no-color sass
 echo Sass compiled
 
 :: 1. KuduSync
