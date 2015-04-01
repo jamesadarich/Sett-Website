@@ -88,54 +88,33 @@ goto :EOF
 :Deployment
 echo Handling node.js deployment.
 
-echo Kudu Sync from "%DEPLOYMENT_SOURCE%" to "%DEPLOYMENT_TARGET%"
-call %KUDU_SYNC_COMMAND% -q -f "%DEPLOYMENT_SOURCE%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.deployment;deploy.cmd" 2>nul
-IF !ERRORLEVEL! NEQ 0 goto error
+:: 1. KuduSync
+IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
+  call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
+  IF !ERRORLEVEL! NEQ 0 goto error
+)
 
+:: 2. Select node version
 call :SelectNodeVersion
-call :ExecuteCmd !NPM_CMD! install
 
-$NPM_CMD install
+:: 3. Install npm packages
+IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
+  pushd "%DEPLOYMENT_TARGET%"
+  call :ExecuteCmd !NPM_CMD! install --production
+  IF !ERRORLEVEL! NEQ 0 goto error
+  popd
+)
+
+::call :SelectNodeVersion
+::call :ExecuteCmd !NPM_CMD! install
+
+::$NPM_CMD install
 
 $NPM_CMD install bower
 ./node_modules/.bin/bower install
 
 $NPM_CMD install grunt-cli
 ./node_modules/.bin/grunt --no-color deploy
-
-::IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
-::  call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
-::    IF !ERRORLEVEL! NEQ 0 goto error
-::)
-
-:: 2. Select node version
-::call :SelectNodeVersion
-
-:: 3. Install npm packages
-::IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
-  ::pushd "%DEPLOYMENT_TARGET%"
-  ::call :ExecuteCmd !NPM_CMD! install
-  ::  IF !ERRORLEVEL! NEQ 0 goto error
-  ::  popd
-::)
-
-:: 5. Install Bower
-::$NPM_CMD install bower
-::./node_modules/.bin/bower install
-
-:: 4. Run Grunt
-:: 4.1 Install Grunt locally
-::call !NPM_CMD! install grunt-cli
-
-:: 4.2 Get Grunt to compile Sass
-::call "!NODE_EXE!" ./node_modules/grunt-cli/bin/grunt --no-color deploy
-echo Sass compiled
-
-:: 1. KuduSync
-::IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
-  ::  call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
-  ::  IF !ERRORLEVEL! NEQ 0 goto error
-::)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
