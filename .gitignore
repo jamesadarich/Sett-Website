@@ -1,5 +1,5 @@
 # Ignore css folders
-compiled-css/
+# css/
 .sass-cache/
 
 # npm stuff
