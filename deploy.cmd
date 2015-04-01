@@ -109,7 +109,7 @@ $NPM_CMD install bower
 call !NPM_CMD! install grunt-cli
 
 :: 4.2 Get Grunt to compile Sass
-call "!NODE_EXE!" ./node_modules/grunt-cli/bin/grunt --no-color sass
+call "!NODE_EXE!" ./node_modules/grunt-cli/bin/grunt --no-color deploy
 echo Sass compiled
 
 :: 1. KuduSync

@@ -31,6 +31,6 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['uglify']);
-  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('deploy', ['sass']);
 
 };
