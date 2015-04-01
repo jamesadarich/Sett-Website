@@ -89,6 +89,7 @@ goto :EOF
 echo Handling node.js deployment.
 
 call :SelectNodeVersion
+call :ExecuteCmd !NPM_CMD! install
 
 $NPM_CMD install
 
