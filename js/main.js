@@ -7,7 +7,8 @@ require.config({
         angularAnimate: '//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate',
         angularMaterial: '//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material',
         angularAMD: '//cdn.jsdelivr.net/angular.amd/0.2/angularAMD.min',
-        angularRoute: '//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-route'
+        angularRoute: '//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-route',
+        newRelicBrowser: 'vendor/new-relic.browser'
     },
     waitSeconds: 30,
     shim: {

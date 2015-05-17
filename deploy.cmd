@@ -105,14 +105,11 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   popd
 )
 
-::call :SelectNodeVersion
-::call :ExecuteCmd !NPM_CMD! install
-
-::$NPM_CMD install
-
+:: 4. Install Bower
 $NPM_CMD install bower
 ./node_modules/.bin/bower install
 
+:: 5. Install and Run Grunt
 $NPM_CMD install grunt-cli
 ./node_modules/.bin/grunt --no-color deploy
 
