@@ -8,7 +8,8 @@ require.config({
         angularMaterial: '//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material',
         angularAMD: '//cdn.jsdelivr.net/angular.amd/0.2/angularAMD.min',
         angularRoute: '//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-route',
-        newRelicBrowser: 'vendor/new-relic.browser'
+        newRelicBrowser: 'vendor/new-relic.browser',
+        ruxit: '//js.ruxit.com/jstag/148709fdc4b/uot59989/bf3a518585dd2066_bs'
     },
     waitSeconds: 30,
     shim: {

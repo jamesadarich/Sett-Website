@@ -1,4 +1,4 @@
-﻿define(['newRelicBrowser', 'angularAMD', 'angularMaterial', 'angularRoute'], function (newRelicBrowser, angularAMD) {
+﻿define(['newRelicBrowser', 'ruxit', 'angularAMD', 'angularMaterial', 'angularRoute'], function (newRelicBrowser, ruxit, angularAMD) {
 
     var app = angular.module('sett-site', ['ngMaterial', 'ngRoute']);
 
