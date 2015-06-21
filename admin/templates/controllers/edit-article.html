@@ -1,23 +1,23 @@
 ﻿<md-content class="md-padding">
     <div layout="column" layout-align="center">
         <md-select placeholder="Select Revision" ng-model="selectedRevision">
-            <md-option ng-repeat="revision in revisions" ng-value="revision">{{revision.Timestamp}}</md-option>
+            <md-option ng-repeat="revision in revisions" ng-value="revision">{{revision.timestamp}}</md-option>
         </md-select>
         <div layout="column">
             <md-input-container flex>
                 <label>Title</label>
-                <input ng-model="selectedRevision.Title" placeholder="Title" />
+                <input ng-model="selectedRevision.title" placeholder="Title" />
             </md-input-container>
             <md-input-container flex>
                 <label>Summary</label>
-                <input ng-model="selectedRevision.Summary" placeholder="Summary" />
+                <input ng-model="selectedRevision.summary" placeholder="Summary" />
             </md-input-container>
             <md-input-container flex>
                 <label>Image Url</label>
-                <input ng-model="selectedRevision.FeaturedImageUrl" placeholder="FeaturedImageUrl" />
+                <input ng-model="selectedRevision.featuredImageUrl" placeholder="FeaturedImageUrl" />
             </md-input-container>
             <label>Content</label>
-            <text-angular ng-model="selectedRevision.Content"></text-angular>
+            <text-angular ng-model="selectedRevision.content"></text-angular>
             <md-button id="submit-revision" class="md-raised md-primary" ng-click="submitRevision()" ng-disabled="attemptingSubmit">Post</md-button>
             <md-progress-linear md-mode="indeterminate" ng-show="attemptingSubmit"></md-progress-linear>
         </div>

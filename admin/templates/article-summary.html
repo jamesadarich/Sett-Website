@@ -1,9 +1,9 @@
-﻿<div layout="row" class="article" ng-model="article" data-article="{{article}}" style="background: url('/api{{article.FeaturedImageUrl}}') no-repeat left center; background-size: cover">
+﻿<div layout="row" class="article" ng-model="article" data-article="{{article}}" style="background: url('/api{{article.featuredImageUrl}}') no-repeat left center; background-size: cover">
     <div flex="30" flex-sm="50" class="image-overlay">
-        <h1>{{article.Title}}</h1>
-        <p>{{article.Summary}}</p>
-        <p>{{article.Author.FirstName}}</p>
-        <md-button class="md-raised md-accent" href="admin/articles/edit/{{article.Id}}">Edit</md-button>
+        <h1>{{article.title}}</h1>
+        <p>{{article.summary}}</p>
+        <p>{{article.author.firstName}}</p>
+        <md-button class="md-raised md-accent" href="admin/articles/edit/{{article.id}}">Edit</md-button>
         <md-button class="md-raised md-warn" ng-click="deleteArticle(article)">Delete</md-button>
     </div>
 </div>
