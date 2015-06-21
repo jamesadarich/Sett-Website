@@ -9,14 +9,14 @@
 
             $scope.article = articles[0];
 
-            $scope.article.Content = $sce.trustAsHtml($scope.article.Content);
+            $scope.article.content = $sce.trustAsHtml($scope.article.content);
 
-            siteShell.setTitle($scope.article.Title);
-            searchEngineOptimiser.setTitle($scope.article.Title);
-            searchEngineOptimiser.setDescription($scope.article.Summary);
+            siteShell.setTitle($scope.article.title);
+            searchEngineOptimiser.setTitle($scope.article.title);
+            searchEngineOptimiser.setDescription($scope.article.summary);
 
             if ($scope.article.KeyWords) {
-                searchEngineOptimiser.setKeyWords($scope.article.KeyWords);
+                searchEngineOptimiser.setKeyWords($scope.article.keyWords);
             }
             else {
                 searchEngineOptimiser.setKeyWords([]);

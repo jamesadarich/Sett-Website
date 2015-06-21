@@ -3,10 +3,10 @@
         <h1><i class="fa fa-refresh pulse-rotate"></i>Loading</h1>
     </div>
     <div layout="column">
-        <div class="article-banner" style="background: url('{{article.FeaturedImageUrl}}') no-repeat left center; background-size: cover">
-            <h1 class="article-title">{{article.Title}}</h1>
-            <h3 class="article-author">{{article.Author.FirstName}}</h3>
+        <div class="article-banner" style="background: url('{{article.featuredImageUrl}}') no-repeat left center; background-size: cover">
+            <h1 class="article-title">{{article.title}}</h1>
+            <h3 class="article-author">{{article.author.firstName}}</h3>
         </div>
-        <div class="article-body" ng-bind-html="article.Content"></div>
+        <div class="article-body" ng-bind-html="article.content"></div>
     </div>
 </md-content>
