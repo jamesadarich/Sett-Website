@@ -122,7 +122,7 @@
     });
 
     var bootstrappedApp = angularAMD.bootstrap(app);
-    bootstrappedApp.apiUrl = 'http://api.getsett.net';
+    bootstrappedApp.apiUrl = 'http://api.getsett.net/sett';
 
     return bootstrappedApp;
 });

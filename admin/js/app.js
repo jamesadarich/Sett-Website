@@ -139,7 +139,7 @@
 
     });
 
-    app.apiUrl = 'http://api.getsett.net';
+    app.apiUrl = 'http://api.getsett.net/sett';
 
     app.handleUnauthorized = function() {
         document.location.href = '/login/';
