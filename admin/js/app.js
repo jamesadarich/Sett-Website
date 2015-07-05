@@ -7,11 +7,11 @@
 
         var getTitle = function () {
             return pageTitle;
-        }
+        };
 
         var setTitle = function (title) {
             pageTitle = title;
-        }
+        };
 
         return {
             getTitle: getTitle,
@@ -25,7 +25,7 @@
         $scope.title = siteShell.getTitle();
         $scope.$watch(siteShell.getTitle, function () {
             $scope.title = siteShell.getTitle();
-        })
+        });
     });
 
     app.controller('body', function ($scope, $http, $mdSidenav, siteShell) {
@@ -81,6 +81,21 @@
             controller: 'dashboard',
             controllerUrl: 'controllers/dashboard'
         }))
+        .when('/admin/pages', angularAMD.route({
+            templateUrl: 'admin/templates/controllers/pages.html',
+            controller: 'pages',
+            controllerUrl: 'controllers/pages'
+        }))
+        .when('/admin/pages/edit/:id', angularAMD.route({
+            templateUrl: 'admin/templates/controllers/edit-page.html',
+            controller: 'edit-page',
+            controllerUrl: 'controllers/edit-page'
+        }))
+        .when('/admin/pages/create', angularAMD.route({
+            templateUrl: 'admin/templates/controllers/edit-page.html',
+            controller: 'edit-page',
+            controllerUrl: 'controllers/edit-page'
+        }))
         .when('/admin/articles', angularAMD.route({
             templateUrl: 'admin/templates/controllers/articles.html',
             controller: 'articles',
@@ -106,27 +121,27 @@
 
         var getTitle = function () {
             return metaTitle;
-        }
+        };
 
         var setTitle = function (title) {
             metaTitle = title;
-        }
+        };
 
         var getDescription = function () {
             return metaDescription;
-        }
+        };
 
         var setDescription = function (description) {
             metaDescription = description;
-        }
+        };
 
         var getKeyWords = function () {
             return metaKeyWords.join(', ');
-        }
+        };
 
         var setKeyWords = function (keyWords) {
             metaKeyWords = keyWords;
-        }
+        };
 
         return {
             getTitle: getTitle,

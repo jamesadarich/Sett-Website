@@ -1,20 +1,20 @@
 ﻿define(['app', 'siteShell'], function (app) {
-    app.controller('articles', function ($scope, $http, $mdToast, siteShell) {
+    app.controller('pages', function ($scope, $http, $mdToast, siteShell) {
 
-        siteShell.setTitle('Articles');
+        siteShell.setTitle('Pages');
 
         $scope.articles = [];
 
-        $http.get(app.apiUrl + '/articles')
-        .success(function (articles) {
-            $scope.articles = articles;
+        $http.get(app.apiUrl + '/pages')
+        .success(function (pages) {
+            $scope.pages = pages;
         });
 
-        $scope.deleteArticle = function (article) {
-            $http.delete(app.apiUrl + '/articles/' + article.id,
+        $scope.deletePage = function (page) {
+            $http.delete(app.apiUrl + '/pages/' + page.id,
                         { headers: { 'Authorization': app.token.token_type + ' ' + app.token.access_token } })
-                .success(function (articles) {
-                    $scope.articles.pop(article);
+                .success(function (pages) {
+                    $scope.pages.pop(page);
                 })
         .error(function (data, status, headers, config) {
 

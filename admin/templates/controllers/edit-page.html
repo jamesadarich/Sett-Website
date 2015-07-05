@@ -1,0 +1,18 @@
+﻿<md-content class="md-padding">
+    <div layout="column" layout-align="center">
+        <div layout="column">
+            <md-input-container flex>
+                <label>Title</label>
+                <input ng-model="page.title" placeholder="Title" />
+            </md-input-container>
+            <md-input-container flex>
+                <label>Summary</label>
+                <input ng-model="page.uri" placeholder="Uri" />
+            </md-input-container>
+            <label>Content</label>
+            <text-angular ng-model="page.content"></text-angular>
+            <md-button id="submit-page" class="md-raised md-primary" ng-click="submitPage()" ng-disabled="attemptingSubmit">Post</md-button>
+            <md-progress-linear md-mode="indeterminate" ng-show="attemptingSubmit"></md-progress-linear>
+        </div>
+    </div>
+</md-content>

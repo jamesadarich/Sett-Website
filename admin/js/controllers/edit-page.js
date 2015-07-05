@@ -1,25 +1,22 @@
-﻿define(['app', 'siteShell', 'angularMaterial'], function (app, textAngular) {
+define(['app', 'siteShell', 'angularMaterial'], function (app, textAngular) {
 
     app.controller('edit-article', function ($scope, $http, $mdToast, $routeParams, siteShell) {
 
-        siteShell.setTitle('Edit Article');
-        $scope.articleId = $routeParams.id;
+        siteShell.setTitle('Edit Page');
+        $scope.pageId = $routeParams.id;
 
-        $scope.selectedRevision = {};
-        $http.get(app.apiUrl + '/article/' + $routeParams.id + '/revisions')
-        .success(function (revisions) {
-            $scope.revisions = revisions;
-            $scope.selectedRevision = revisions[0];
+        $scope.page = {};
+        $http.get(app.apiUrl + '/page/' + $routeParams.id)
+        .success(function (page) {
+            $scope.page = page;
         });
 
         $scope.attemptingSubmit = false;
 
         $scope.submitRevision = function () {
             $scope.attemptingSubmit = true;
-            $scope.selectedRevision.ArticleId = $scope.articleId;
-            $scope.selectedRevision.id = null;
-            $http.post(app.apiUrl + '/article/revision',
-                        $scope.selectedRevision,
+            $http.post(app.apiUrl + '/page',
+                        $scope.page,
                         { headers: { 'Authorization': app.token.token_type + ' ' + app.token.access_token } }).
             success(function (data, status, headers, config) {
                 // this callback will be called asynchronously
