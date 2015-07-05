@@ -1,6 +1,6 @@
 define(['app', 'siteShell', 'angularMaterial'], function (app, textAngular) {
 
-    app.controller('edit-article', function ($scope, $http, $mdToast, $routeParams, siteShell) {
+    app.controller('edit-page', function ($scope, $http, $mdToast, $routeParams, siteShell) {
 
         siteShell.setTitle('Edit Page');
         $scope.pageId = $routeParams.id;
