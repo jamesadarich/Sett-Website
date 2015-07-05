@@ -127,7 +127,7 @@
     //bootstrappedApp.apiUrl = 'http://api.getsett.net/sett';
 
     //local dev api
-    bootstrappedApp.apiUrl = 'http://api.getsett.dev/sett';
+    bootstrappedApp.apiUrl = 'http://api.getsett.net/sett';
 
     return bootstrappedApp;
 });
