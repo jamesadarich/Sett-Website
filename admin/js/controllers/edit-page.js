@@ -19,7 +19,7 @@ define(['app', 'siteShell', 'angularMaterial'], function (app, textAngular) {
             $scope.attemptingSubmit = true;
             var http = $http.post;
 
-            if (page.id) {
+            if ($scope.page.id) {
               http = $http.put;
             }
 
