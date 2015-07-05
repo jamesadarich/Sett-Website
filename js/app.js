@@ -7,11 +7,11 @@
 
         var getTitle = function () {
             return pageTitle;
-        }
+        };
 
         var setTitle = function (title) {
             pageTitle = title;
-        }
+        };
 
         return {
             getTitle: getTitle,
@@ -26,27 +26,27 @@
 
         var getTitle = function () {
             return metaTitle;
-        }
+        };
 
         var setTitle = function (title) {
             metaTitle = title;
-        }
+        };
 
         var getDescription = function () {
             return metaDescription;
-        }
+        };
 
         var setDescription = function (description) {
             metaDescription = description;
-        }
+        };
 
         var getKeyWords = function () {
             return metaKeyWords.join(', ');
-        }
+        };
 
         var setKeyWords = function (keyWords) {
             metaKeyWords = keyWords;
-        }
+        };
 
         return {
             getTitle: getTitle,
@@ -122,7 +122,12 @@
     });
 
     var bootstrappedApp = angularAMD.bootstrap(app);
-    bootstrappedApp.apiUrl = 'http://api.getsett.net/sett';
+
+    //production api
+    //bootstrappedApp.apiUrl = 'http://api.getsett.net/sett';
+
+    //local dev api
+    bootstrappedApp.apiUrl = 'http://api.getsett.dev/sett';
 
     return bootstrappedApp;
 });
