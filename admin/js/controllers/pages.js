@@ -3,7 +3,7 @@
 
         siteShell.setTitle('Pages');
 
-        $scope.articles = [];
+        $scope.pages = [];
 
         $http.get(app.apiUrl + '/pages')
         .success(function (pages) {
@@ -29,7 +29,7 @@
                 .position('top left right')
                 .hideDelay(3000)
             );
-        });
+        });;
         };
         /*
         $scope.newArticle = function () {

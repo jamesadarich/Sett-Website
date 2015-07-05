@@ -3,24 +3,26 @@ define(['app', 'siteShell', 'angularMaterial'], function (app, textAngular) {
     app.controller('edit-page', function ($scope, $http, $mdToast, $routeParams, siteShell) {
 
         siteShell.setTitle('Edit Page');
-        $scope.pageId = $routeParams.id;
 
         $scope.page = {};
-        $http.get(app.apiUrl + '/page/' + $routeParams.id)
-        .success(function (page) {
-            $scope.page = page;
-        });
+
+        if ($routeParams.id) {
+          $http.get(app.apiUrl + '/page/' + $routeParams.id)
+          .success(function (page) {
+              $scope.page = page;
+          });
+        }
 
         $scope.attemptingSubmit = false;
 
-        $scope.submitRevision = function () {
+        $scope.submitPage = function () {
             $scope.attemptingSubmit = true;
             var http = $http.post;
 
             if (page.id) {
               http = $http.put;
             }
-            
+
             http(app.apiUrl + '/page',
                         $scope.page,
                         { headers: { 'Authorization': app.token.token_type + ' ' + app.token.access_token } }).
