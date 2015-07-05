@@ -11,7 +11,7 @@
         });
 
         $scope.deletePage = function (page) {
-            $http.delete(app.apiUrl + '/pages/' + page.id,
+            $http.delete(app.apiUrl + '/page/' + page.id,
                         { headers: { 'Authorization': app.token.token_type + ' ' + app.token.access_token } })
                 .success(function (pages) {
                     $scope.pages.pop(page);
