@@ -15,7 +15,13 @@ define(['app', 'siteShell', 'angularMaterial'], function (app, textAngular) {
 
         $scope.submitRevision = function () {
             $scope.attemptingSubmit = true;
-            $http.post(app.apiUrl + '/page',
+            var http = $http.post;
+
+            if (page.id) {
+              http = $http.put;
+            }
+            
+            http(app.apiUrl + '/page',
                         $scope.page,
                         { headers: { 'Authorization': app.token.token_type + ' ' + app.token.access_token } }).
             success(function (data, status, headers, config) {
