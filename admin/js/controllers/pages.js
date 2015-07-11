@@ -29,7 +29,7 @@
                 .position('top left right')
                 .hideDelay(3000)
             );
-        });;
+        });
         };
         /*
         $scope.newArticle = function () {
